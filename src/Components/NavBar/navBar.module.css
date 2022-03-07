@@ -1,0 +1,13 @@
+header {
+    display: flex;
+
+}
+
+.logo-container {
+    display: flex;
+
+}
+
+.logo {
+    width: 50%;
+}
