@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../images/planet.png';
-import styles from './navBar.module.css'
+import styles from './navBar.module.css';
 
 const NavBar = () => {
   const Links = [
@@ -28,23 +28,22 @@ const NavBar = () => {
   ];
   return (
     <header>
-      <div className='logo-container'>
-        <img src={logo} className='logo'/>
-        <h1>Space traveler's Hub</h1>
+      <div className={styles['header-container']}>
+        <div className={styles['logo-container']}>
+          <NavLink to="/"><img src={logo} className={styles.logo} alt="" /></NavLink>
+        </div>
+        <h1>Space traveler &lsquo; Hub</h1>
       </div>
       <nav>
         <ul>
           {Links.map((link) => (
             <li key={link.id}>
-              <NavLink to={link.path}>
-                {link.text}
-              </NavLink>
+              <NavLink to={link.path}>{link.text}</NavLink>
             </li>
           ))}
         </ul>
       </nav>
     </header>
-
   );
 };
 
