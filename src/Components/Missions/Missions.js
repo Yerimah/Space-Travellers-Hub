@@ -40,17 +40,24 @@ const Missions = () => {
             <tr key={mission_id}>
               <td className={styles.missionName}>{missionName}</td>
               <td>{description}</td>
-              <td>
-                <p>{reserved ? 'ACTIVE MEMBER' : 'NOT A MEMBER'}</p>
+              <td className={styles.badge}>
+                <p
+                  className={
+                    reserved ? styles.missionReserved : styles.notReserved
+                  }
+                >
+                  {reserved ? 'ACTIVE MEMBER' : 'NOT A MEMBER'}
+                </p>
               </td>
-              <td key={mission_id}>
+              <td key={mission_id} className={styles.badge}>
                 <button
+                  className={reserved ? styles.leave : styles.join}
                   data-target={mission_id}
                   key={mission_id}
                   type="button"
                   onClick={clickHandler}
                 >
-                  {reserved ? 'Leave MIssion' : 'Join Mission'}
+                  {reserved ? 'Leave Mission' : 'Join Mission'}
                 </button>
               </td>
             </tr>
