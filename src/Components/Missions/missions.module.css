@@ -1,0 +1,19 @@
+.table {
+    margin-top: 2rem;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 10px;
+}
+
+th, .missionName {
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f5f4f4;
+}
