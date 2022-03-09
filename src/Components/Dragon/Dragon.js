@@ -23,14 +23,12 @@ const Dragon = () => {
     <div>
       <ul className={styles['dragon-list']}>
         {allDragons.map((dragon) => (
-
           <li key={dragon.id} type={dragon.type} className={styles['dragon-item']}>
             <div className={styles['item-img-container']}>
               <img src={dragon.images} alt={dragon.name} />
             </div>
             <div className={styles['item-body']}>
               <h3>{dragon.name}</h3>
-
               {dragon.reserved && <p>reserved</p>}
               {dragon.reserved ? (
                 <button

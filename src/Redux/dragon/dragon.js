@@ -4,6 +4,11 @@ const SET_RESERVATION = 'dragons/dragon/SET_RESERVATION';
 const GET_DRAGONS = 'dragons/dragon/GET_DRAGONS';
 const CANCEL_RESERVATION = 'dragons/dragon/CANCEL_RESERVATION';
 
+export const getDragons = (allDragons) => ({
+  type: GET_DRAGONS,
+  payload: allDragons,
+});
+
 export const setReservation = (id) => ({
   type: SET_RESERVATION,
   payload: id,
@@ -12,11 +17,6 @@ export const setReservation = (id) => ({
 export const cancelReservation = (id) => ({
   type: CANCEL_RESERVATION,
   payload: id,
-});
-
-export const getDragons = (allDragons) => ({
-  type: GET_DRAGONS,
-  payload: allDragons,
 });
 
 export const getDragonsFromAPI = () => async (dispatch) => {
