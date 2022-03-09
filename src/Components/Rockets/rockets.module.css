@@ -41,3 +41,20 @@ body {
   cursor: pointer;
   margin-top: 15px;
 }
+
+.cancel-reserve {
+    background: white;
+    color: rgb(131, 131, 131);
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid rgb(7, 7, 7);
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.mini-btn {
+    background: #1083fd;
+    color: white;
+    border-radius: 4px;
+    margin-right: 5px;
+}
