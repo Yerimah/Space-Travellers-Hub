@@ -4,13 +4,11 @@ import { getDragonsFromAPI, cancelReservation, setReservation } from '../../Redu
 import styles from './dragon.module.css';
 
 const Dragon = () => {
-  const allDragons = useSelector((state) => state.dragonReducer.myDragons);
+  const allDragons = useSelector((state) => state.dragonReducer);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!allDragons) {
-      dispatch(getDragonsFromAPI());
-    }
+    dispatch(getDragonsFromAPI());
   }, []);
 
   const handleReservation = (id) => {
@@ -24,7 +22,7 @@ const Dragon = () => {
   return (
     <div>
       <ul className={styles['dragon-list']}>
-        {allDragons?.map((dragon) => (
+        {allDragons.map((dragon) => (
 
           <li key={dragon.id} type={dragon.type} className={styles['dragon-item']}>
             <div className={styles['item-img-container']}>

@@ -39,30 +39,27 @@ export const getDragonsFromAPI = () => async (dispatch) => {
 const dragonReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_DRAGONS:
-      return {
-        ...state,
-        myDragons: action.payload,
-      };
+      return action.payload;
 
     case SET_RESERVATION: {
-      const currentState = state.myDragons.map((dragon) => {
+      const currentState = state.map((dragon) => {
         if (dragon.id === action.payload) {
           return { ...dragon, reserved: !dragon.reserved };
         }
         return dragon;
       });
-      return { ...state, myDragons: currentState };
+      return currentState;
     }
 
     case CANCEL_RESERVATION:
     {
-      const cancelState = state.myDragons.map((dragon) => {
+      const cancelState = state.map((dragon) => {
         if (dragon.id === action.payload) {
           return { ...dragon, reserved: !dragon.reserved };
         }
         return dragon;
       });
-      return { ...state, myDragons: cancelState };
+      return cancelState;
     }
 
     default:
