@@ -7,23 +7,21 @@ const Dragon = () => {
   const dispatch = useDispatch();
   const allDragons = useSelector((state) => state.dragonReducer);
 
-  const toggleHandler = (id) => {
-    const currentDragon = allDragons.find((dragon) => dragon.id === id);
-    dispatch(setReservation(currentDragon, !currentDragon.reserved));
+  const toggleHandler = (e) => {
+    console.log('the id', e.target);
+    dispatch(setReservation(e.target.id));
   };
 
   useEffect(() => {
     dispatch(getDragonsFromAPI());
   }, []);
 
-  allDragons.sort((a, b) => a.id > b.id);
-
   return (
     <div>
       <ul className={styles['dragon-list']}>
         {allDragons.map((dragon) => (
 
-          <li key={dragon.id} type={dragon.type} className={styles['dragon-item']}>
+          <li key={dragon.id} id={dragon.id} type={dragon.type} className={styles['dragon-item']}>
             <div className={styles['item-img-container']}>
               <img src={dragon.image} alt={dragon.name} />
             </div>
@@ -32,9 +30,9 @@ const Dragon = () => {
               {dragon.reserved && <p>reserved</p>}
 
               <button
-                variant="contained"
+                id={dragon.id}
                 type="button"
-                onClick={() => toggleHandler(dragon.id)}
+                onClick={toggleHandler}
               >
                 {(!dragon.reserved ? 'Reserve Dragon' : 'Cancel Reservation')}
               </button>
@@ -45,5 +43,10 @@ const Dragon = () => {
     </div>
   );
 };
+
+
+// set say our result is an array of objects;
+// result = [{id: dragon 1, name: dragon: 1, flickr_image: [imageOne, imageTwo, imagethree], type: 'capsule'}, {}] ======== allDragons
+
 
 export default Dragon;

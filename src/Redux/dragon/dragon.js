@@ -3,17 +3,10 @@ const initialState = [];
 const SET_RESERVATION = 'dragons/dragon/SET_RESERVATION';
 const GET_DRAGONS = 'dragons/dragon/GET_DRAGONS';
 
-export const setReservation = (dragonObj, reserved) => {
-  const reservedObj = {
-    ...dragonObj,
-    reserved,
-  };
-
-  return ({
-    type: SET_RESERVATION,
-    payload: reservedObj,
-  });
-};
+export const setReservation = (id) => ({
+  type: SET_RESERVATION,
+  payload: id,
+});
 
 export const getDragons = (allDragons) => ({
   type: GET_DRAGONS,
@@ -24,6 +17,7 @@ export const getDragonsFromAPI = () => (
   async (dispatch) => {
     const response = await fetch(BASE_URL);
     const result = await response.json();
+    console.log('betrand result', result);
     const dragonsArray = [];
     result.forEach((x) => {
       const dragonsObject = {
@@ -43,13 +37,17 @@ const dragonReducer = (state = initialState, action) => {
     case GET_DRAGONS:
       return [...action.payload];
     case SET_RESERVATION:
-    {
-      const temp = state.filter((dragon) => dragon.id !== action.payload.id);
       return [
-        ...temp, action.payload,
+        ...state,
+        state.map((dragon) => {
+          if (dragon.id === action.payload) {
+            return {
+              ...dragon, reserved: !dragon.reserved,
+            };
+          }
+          return dragon;
+        }),
       ];
-    }
-
     default:
       return state;
   }
