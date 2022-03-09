@@ -14,13 +14,13 @@ const Rockets = () => {
     }
   };
 
-  const rocketBooking = (rocket_id) => {
-    dispatch(reserveRocket(rocket_id))
-  }
+  const rocketBooking = (id) => {
+    dispatch(reserveRocket(id));
+  };
 
-  const cancelBooking = (rocket_id) => {
-    dispatch(cancelReserve(rocket_id))
-  }
+  const cancelBooking = (id) => {
+    dispatch(cancelReserve(id));
+  };
 
   useEffect(() => {
     getRockets();
@@ -35,21 +35,27 @@ const Rockets = () => {
           </div>
           <div className={styles['title-desc']}>
             <h2>{rocket.rocket_name}</h2>
-            <p className={styles['parag']}>
-              {rocket.reserved ? (<span className={styles['mini-btn']}>Reserved</span>) : (false)} 
+            <p className={styles.parag}>
+              {rocket.reserved ? (<span className={styles['mini-btn']}>Reserved</span>) : (false)}
               {rocket.rocket_description}
             </p>
-            
+
             {rocket.reserved ? (
-            <button 
-            onClick={() => cancelBooking(rocket.rocket_id)} 
-            type="button" 
-            className={styles['cancel-reserve']}>Cancel Reservation</button>
+              <button
+                onClick={() => cancelBooking(rocket.rocket_id)}
+                type="button"
+                className={styles['cancel-reserve']}
+              >
+                Cancel Reservation
+              </button>
             ) : (
-              <button 
-              onClick={() => rocketBooking(rocket.rocket_id)} 
-              type="button"
-              className={styles['rocket-btn']}>Reserve Rocket</button>
+              <button
+                onClick={() => rocketBooking(rocket.rocket_id)}
+                type="button"
+                className={styles['rocket-btn']}
+              >
+                Reserve Rocket
+              </button>
 
             )}
           </div>

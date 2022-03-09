@@ -5,20 +5,19 @@ const rocketApi = 'https://api.spacexdata.com/v3/rockets';
 
 const initialstate = [];
 
-
 export const addRocket = (rockets) => ({
   type: ADD_ROCKET,
   rockets,
 });
 
 export const reserveRocket = (rocketId) => ({
-    type: RESERVE_ROCKET,
-    rocketId,
+  type: RESERVE_ROCKET,
+  rocketId,
 });
 
 export const cancelReserve = (rocketId) => ({
-    type: CANCEL_RESERVATION,
-    rocketId
+  type: CANCEL_RESERVATION,
+  rocketId,
 });
 
 export const FetchRockets = () => (async (dispatch) => {
@@ -31,7 +30,7 @@ export const FetchRockets = () => (async (dispatch) => {
       rocket_name: e.rocket_name,
       rocket_description: e.description,
       rocket_img: e.flickr_images[0],
-      reserved: false
+      reserved: false,
     };
     rocketsArray.push(rocket);
   });
@@ -64,7 +63,7 @@ const reducer = (state = initialstate, action) => {
 
       return newState;
     }
-        
+
     default:
       return state;
   }
