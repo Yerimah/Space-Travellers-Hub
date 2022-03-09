@@ -2,9 +2,9 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 const RocketsReserved = () => {
-  const selectedRockets = useSelector((state) => state.rockets);
+  const selectedRockets = useSelector((state) => state.rocketsReducer);
 
-  const reservedRockets = selectedRockets.filter((rocket) => rocket.reserved === true);
+  const reservedRockets = selectedRockets.filter((rocket) => rocket.reserved);
 
   return (
     <div className="profile-container">
