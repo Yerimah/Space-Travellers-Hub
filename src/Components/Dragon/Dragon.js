@@ -47,7 +47,6 @@ const Dragon = () => {
                 <button
                   id={dragon.id}
                   className={styles['reserve-btn']}
-                  className={styles.button
                   type="button"
                   onClick={(e) => {
                     handleReservation(e.target.id);
