@@ -1,3 +1,20 @@
 .active {
   text-decoration: underline;
 }
+
+.missions-header {
+  border-bottom: 1px solid #ddd;
+  padding-left: 10px;
+}
+
+.missions-container {
+  margin-top: 2rem;
+  border: 1px solid #ddd;
+  width: 20vw;
+}
+
+.missions-list {
+  list-style-type: none;
+  padding-left: 10px;
+  font-size: 18px;
+}
