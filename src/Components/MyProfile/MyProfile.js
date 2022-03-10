@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import RocketsReserved from '../Rockets/RocketsReserved';
 import styles from './myProfile.module.css';
 
 const MyProfile = () => {
@@ -12,17 +13,8 @@ const MyProfile = () => {
 
   return (
     <div className={styles.profile}>
-      <div className={styles.box}>
-        <h2 className="title">My Rockets</h2>
-        <table className="Mission-ProfileTable">
-          <tbody>
-            <tr><td className={styles['title-entry']}>Falcon 1</td></tr>
-            <tr><td className={styles['title-entry']}>Falcon 9</td></tr>
-            <tr><td className={styles['title-entry']}>Falcon Heavy</td></tr>
-            <tr><td className={styles['title-entry']}>Starship</td></tr>
-          </tbody>
-        </table>
-      </div>
+
+      <RocketsReserved />
       <div className={styles.box}>
         <h2 className="title">My Missions</h2>
         <table className={styles['Mission-ProfileTable']}>

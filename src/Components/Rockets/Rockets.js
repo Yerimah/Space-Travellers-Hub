@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { FetchRockets } from '../../Redux/rockets/rockets';
+import { FetchRockets, reserveRocket, cancelReserve } from '../../Redux/rockets/rockets';
 import styles from './rockets.module.css';
 
 const Rockets = () => {
@@ -12,6 +12,14 @@ const Rockets = () => {
     if (rocketsinfo.length === 0) {
       dispatch(FetchRockets());
     }
+  };
+
+  const rocketBooking = (id) => {
+    dispatch(reserveRocket(id));
+  };
+
+  const cancelBooking = (id) => {
+    dispatch(cancelReserve(id));
   };
 
   useEffect(() => {
@@ -28,9 +36,28 @@ const Rockets = () => {
           <div className={styles['title-desc']}>
             <h2>{rocket.rocket_name}</h2>
             <p className={styles.parag}>
+              {rocket.reserved ? (<span className={styles['mini-btn']}>Reserved</span>) : (false)}
               {rocket.rocket_description}
             </p>
-            <button type="button" className={styles['rocket-btn']}>Reserve Rocket</button>
+
+            {rocket.reserved ? (
+              <button
+                onClick={() => cancelBooking(rocket.rocket_id)}
+                type="button"
+                className={styles['cancel-reserve']}
+              >
+                Cancel Reservation
+              </button>
+            ) : (
+              <button
+                onClick={() => rocketBooking(rocket.rocket_id)}
+                type="button"
+                className={styles['rocket-btn']}
+              >
+                Reserve Rocket
+              </button>
+
+            )}
           </div>
         </div>
       ))}
