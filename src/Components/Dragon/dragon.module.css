@@ -1,0 +1,30 @@
+.dragon-list {
+  list-style-type: none;
+}
+
+.dragon-item {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.dragon-item .item-img-container {
+  width: 240px;
+  height: 176px;
+}
+
+.dragon-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.dragon-item button {
+  border: 1px solid #1782fc;
+  background-color: #1083fd;
+  border-radius: 4px;
+  color: #fff;
+  padding: 8px 10px;
+  text-align: center;
+  font-size: 14px;
+}
