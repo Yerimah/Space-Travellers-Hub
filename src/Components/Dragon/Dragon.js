@@ -8,7 +8,9 @@ const Dragon = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getDragonsFromAPI());
+    if (allDragons.length === 0) {
+      dispatch(getDragonsFromAPI());
+    }
   }, []);
 
   const handleReservation = (id) => {
@@ -29,11 +31,11 @@ const Dragon = () => {
             </div>
             <div className={styles['item-body']}>
               <h3>{dragon.name}</h3>
-              {dragon.reserved && <p>reserved</p>}
+              {dragon.reserved && <p className={styles.badge}>reserved</p>}
               {dragon.reserved ? (
                 <button
                   id={dragon.id}
-                  className={styles.cancelDragon}
+                  className={styles['cancel-btn']}
                   type="button"
                   onClick={(e) => {
                     cancelReserve(e.target.id);
@@ -44,7 +46,7 @@ const Dragon = () => {
               ) : (
                 <button
                   id={dragon.id}
-                  className={styles.button}
+                  className={styles['reserve-btn']}
                   type="button"
                   onClick={(e) => {
                     handleReservation(e.target.id);
