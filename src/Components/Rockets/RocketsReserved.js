@@ -12,7 +12,7 @@ const RocketsReserved = () => {
       {
 reservedRockets.map((rocket) => (
   <div key={rocket.rocket_id}>
-    <p>{rocket.rocket_name}</p>
+    <p className="proflist">{rocket.rocket_name}</p>
   </div>
 ))
 }

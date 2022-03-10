@@ -4,7 +4,7 @@ import style from './profile.module.css';
 
 const MyProfile = () => (
   <main className={style.container}>
-    <div className={style.rockets}>
+    <div className={style['profile-rockets']}>
       <RocketsReserved />
     </div>
 
