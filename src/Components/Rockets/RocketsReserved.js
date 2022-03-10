@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import styles from '../MyProfile/myProfile.module.css';
 
 const RocketsReserved = () => {
   const selectedRockets = useSelector((state) => state.rocketsReducer);
@@ -7,15 +8,17 @@ const RocketsReserved = () => {
   const reservedRockets = selectedRockets.filter((rocket) => rocket.reserved);
 
   return (
-    <div className="profile-container">
-      <h4>My Reserved Rockets</h4>
-      {
-reservedRockets.map((rocket) => (
-  <div key={rocket.rocket_id}>
-    <p className="proflist">{rocket.rocket_name}</p>
-  </div>
-))
-}
+    <div className={styles.box}>
+      <h2>My Reserved Rockets</h2>
+      <table className={styles['Mission-ProfileTable']}>
+        <tbody>
+          {reservedRockets.map((rocket) => (
+            <tr key={rocket.rocket_id}>
+              <td className={styles['title-entry']}>{rocket.rocket_name}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
