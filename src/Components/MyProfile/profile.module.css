@@ -12,3 +12,7 @@ h4 {
   border-bottom: 1px solid #ddd;
   padding-left: 10px;
 }
+
+p.proflist {
+  padding: 10px;
+}
