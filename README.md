@@ -2,7 +2,14 @@
 
 # Space-Travellers-Hub
 
+The Space travelers hub is a web app that allows adventurers to make custom reservations of rockets and dragons for space travel. it offers the users an opportunity to select a mission of their choice. 
+
 ## App Screenshot
+
+![Space Travel hub](https://user-images.githubusercontent.com/71140133/157690607-cb0c3817-8107-431a-b06c-aec689871904.PNG)
+
+## Demo
+[View website](https://spacecrafthub.netlify.app/)
 
 ## Built With
 - ReactJS
