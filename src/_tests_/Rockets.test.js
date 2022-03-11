@@ -18,7 +18,7 @@ describe('Rockets components test', () => {
 
   it('test api data', async () => {
     render(<RocketProvider />);
-    const rocketData = await screen.findAllByText('Reserve Rocket');
-    expect(rocketData).toHaveLength(4);
+    const data = await screen.findAllByText('Reserve Rocket');
+    expect(data).toHaveLength(4);
   });
 });
