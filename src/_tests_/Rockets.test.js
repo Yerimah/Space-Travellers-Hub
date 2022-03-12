@@ -1,5 +1,5 @@
 import renderer from 'react-test-renderer';
-import { screen, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import store from '../Redux/configureStore';
 import Rockets from '../Components/Rockets/Rockets';
@@ -16,9 +16,12 @@ describe('Rockets components test', () => {
     expect(allRockets).toMatchSnapshot();
   });
 
-  it('test api data', async () => {
-    render(<RocketProvider />);
-    const data = await screen.findAllByText('Reserve Rocket');
-    expect(data).toHaveLength(4);
+  it('has a text in the DOM', () => {
+    const { container } = render(
+      <Provider store={store}>
+        <Rockets />
+      </Provider>,
+    );
+    expect(container.getElementsByClassName('rocketList').length).toBe(1);
   });
 });
