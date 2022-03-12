@@ -18,9 +18,10 @@ describe('Rockets components test', () => {
 
   it('has a text in the DOM', () => {
     const { container } = render(
-    <Provider store={store}>
-      <Rockets />
-    </Provider>);
+      <Provider store={store}>
+        <Rockets />
+      </Provider>,
+    );
     expect(container.getElementsByClassName('rocketList').length).toBe(1);
   });
 });
