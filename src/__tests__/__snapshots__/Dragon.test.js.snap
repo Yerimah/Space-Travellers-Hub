@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dragon component test reders correctly 1`] = `
+<div>
+  <ul
+    className="dragon-list"
+  />
+</div>
+`;
