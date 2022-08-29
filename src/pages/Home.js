@@ -3,8 +3,7 @@ import HeadLine from '../Components/HeadLine/HeadLine';
 
 const Home = () => (
   <>
-  <div>Home</div>
-  <HeadLine/>
+    <HeadLine/>
   </>
 );
 
