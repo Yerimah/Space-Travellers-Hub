@@ -3,7 +3,7 @@ import HeadLine from '../Components/HeadLine/HeadLine';
 
 const Home = () => (
   <>
-    <HeadLine/>
+    <HeadLine />
   </>
 );
 
