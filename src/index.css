@@ -41,6 +41,10 @@ body {
   font-family: 'Voyager-Regular';
 }
 
+.u-mt-small {
+  margin-top: 2rem;
+}
+
 
 /* .active {
   text-decoration: underline;
