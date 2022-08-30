@@ -14,6 +14,15 @@
         url('./assets/fonts/Polaris.otf') format('otf')
 }
 
+:root {
+  --color-bg-main: #1b1f31;
+  --color-bg-secondary: #1d1d1d;
+  --color-primary: #4e2ecf;
+  --color-secondary: #6fcf97;
+  --font-color-1: #fff;
+  --font-color-2: #8b8b8b;
+}
+
 *,
 *::after,
 *::before {

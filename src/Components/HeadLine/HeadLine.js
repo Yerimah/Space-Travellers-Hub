@@ -11,7 +11,12 @@ const HeadLine = () => (
     </div>
 
     <div className={styles['headline-text']}>
-      <h1>Discover the beauty of space</h1>
+      <div className={styles['u-mt-large']}>
+        <h1 className={styles['headline-text__heading']}>
+          Discover the beauty of space
+          <span className={styles['headline-text__heading--small']}>The world outside your world</span>
+        </h1>
+      </div>
     </div>
   </section>
 );
