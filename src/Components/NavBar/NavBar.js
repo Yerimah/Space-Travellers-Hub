@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../../images/planet.png';
+import logo from '../../assets/planet.png';
 import styles from './navBar.module.css';
 
 const NavBar = () => {
@@ -8,31 +8,35 @@ const NavBar = () => {
     {
       id: 1,
       path: '/',
-      text: 'Rockets',
+      text: 'Home',
     },
     {
       id: 2,
-      path: '/dragon',
-      text: 'Dragon',
+      path: '/rockets',
+      text: 'Rockets',
     },
     {
       id: 3,
+      path: '/dragons',
+      text: 'Dragons',
+    },
+    {
+      id: 4,
       path: '/missions',
       text: 'Missions',
     },
     {
-      id: 4,
-      path: '/profile',
-      text: 'My Profile',
+      id: 5,
+      path: '/summary',
+      text: 'Summary',
     },
   ];
   return (
     <header>
       <div className={styles['header-container']}>
         <div className={styles['logo-container']}>
-          <NavLink to="/"><img src={logo} className={styles.logo} alt="" /></NavLink>
+          <NavLink to="/"><img src={logo} className={styles.logo} alt="STH logo" /></NavLink>
         </div>
-        <h1>Space Traveler&lsquo;s Hub</h1>
       </div>
       <nav>
         <ul>
