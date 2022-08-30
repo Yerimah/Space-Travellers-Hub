@@ -1,4 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@font-face {
+  font-family: 'Voyager-Bold';
+  src: url('./assets/fonts/Voyager-light.woff') format('woff')
+}
+
+@font-face {
+  font-family: 'Voyager-Regular';
+  src: url('./assets/fonts/Voyager-heavy.woff') format('woff')
+}
+
+@font-face {
+  font-family: 'Polaris';
+  src: url('./assets/fonts/Polaris.woff2') format('woff2'),
+        url('./assets/fonts/Polaris.otf') format('otf')
+}
 
 *,
 *::after,
@@ -15,7 +29,7 @@ html {
 
 body {
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Voyager-Regular';
 }
 
 

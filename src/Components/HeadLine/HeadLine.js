@@ -10,7 +10,7 @@ const HeadLine = () => (
       </video>
     </div>
 
-    <div className={styles.headline}>
+    <div className={styles['headline-text']}>
       <h1>Discover the beauty of space</h1>
     </div>
   </section>
