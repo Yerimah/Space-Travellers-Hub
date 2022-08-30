@@ -15,7 +15,7 @@ const SectionRocket = () => (
           Since 2030, We have been working with SpaceX corporation to orginize
           space travel tours. We do have various space vehicles to satisfy your
           needs. There are rockets, dragons, orcists and private flies for
-          luxurios experience. Our mission is to help people discore the beauty
+          luxurious experience. Our mission is to help people discover the beauty
           of space, the world outside our world.Tours for large group of people
           is made by using modern Rockets.
         </p>

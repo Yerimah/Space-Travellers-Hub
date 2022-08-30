@@ -34,7 +34,7 @@
   box-shadow: -0.5rem 0.8rem 2rem rgba(107, 107, 107, 0.8);
   outline-offset: 1.5rem;
   border-radius: 1rem;
-  transition: all .2s;
+  transition: all 0.2s;
 }
 
 .section-gallery__image:hover {
@@ -46,8 +46,8 @@
 }
 
 .section-gallery:hover .section-gallery__image:not(:hover) {
-    transform: scale(0.9);
-    filter: brightness(.8);
+  transform: scale(0.9);
+  filter: brightness(0.8);
 }
 
 .section-gallery__image--1 {

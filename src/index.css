@@ -10,7 +10,8 @@
 
 @font-face {
   font-family: "Polaris";
-  src: url("./assets/fonts/Polaris.woff2") format("woff2"),
+  src:
+    url("./assets/fonts/Polaris.woff2") format("woff2"),
     url("./assets/fonts/Polaris.otf") format("otf");
 }
 
@@ -39,7 +40,7 @@ html {
 body {
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: "Voyager-Regular";
+  font-family: "Voyager-Regular", sans-serif;
   color: var(--font-color-1);
 }
 
@@ -48,15 +49,15 @@ body {
 }
 
 .u-heading {
-  background-image: linear-gradient(
-    to bottom,
-    var(--font-color-1),
-    var(--font-color-2)
-  );
+  background-image:
+    linear-gradient(
+      to bottom,
+      var(--font-color-1),
+      var(--font-color-2)
+    );
   color: transparent;
   -webkit-background-clip: text;
-  background-clip: text;
-  text-shadow: 0.09rem -0.09rem .8rem var(--font-color-1);
+  text-shadow: 0.09rem -0.09rem 0.8rem var(--font-color-1);
   text-align: center;
   font-size: 1.5rem;
 }
