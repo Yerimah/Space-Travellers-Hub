@@ -1,5 +1,49 @@
 .rocket-section {
-    height: 500px;
-    background-color: var(--color-bg-main);
-    transform: translateY(-5.1rem);
+  background-color: #1b1f31;
+  transform: translateY(-5.1rem);
+  padding: 5rem 2.5rem;
+  height: 100vh;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  gap: 5rem;
+}
+
+.rocket-section__text {
+  max-width: 50%;
+}
+
+.rocket-section__images {
+    max-width: 60%;
+    position: relative;
+}
+
+.section-gallery {
+    display: flex;
+}
+
+.section-gallery__image {
+  width: 30%;
+  height: 2rem;
+  position: absolute;
+}
+
+.section-gallery__image--1 {
+  top: 5rem;
+  left: 20%;
+}
+
+.section-gallery__image--2 {
+
+  top: -1rem;
+  left: 0;
+}
+.section-gallery__image--3 {
+
+  top: 1rem;
+  right: 0;
 }
